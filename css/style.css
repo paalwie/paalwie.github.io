@@ -2196,6 +2196,13 @@ div.mc-image {
     line-height:48px;
 }
 
+.row {
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Inhalt horizontal zentrieren */
+  }
+
+  
+
 .news-content .date small{
     margin:0;
     font-size:26px;
