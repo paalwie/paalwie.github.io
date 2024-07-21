@@ -371,10 +371,6 @@ p {
 	/*margin:0px;*/;
 }
 
-.navStyle ul li:last-child {
-    margin: 0 0 0 23px;
-}
-
 .navStyle ul li a {
     display: block;
     font-size: 15px;
