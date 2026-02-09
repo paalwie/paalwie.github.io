@@ -149,11 +149,15 @@
 
 		.portfolio-grid {
 			margin-top: 40px;
+			max-width: 2500px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.portfolio-item {
 			transition: 0.4s all ease;
 			overflow: hidden;
+			padding: 15px;
 		}
 
 		.portfolio-item.hidden {
@@ -164,7 +168,15 @@
 			position: relative;
 			overflow: hidden;
 			aspect-ratio: 4 / 3;
-			border: none;
+			border: 4px solid var(--accent-color);
+			border-radius: 4px;
+			background-color: #000;
+			transition: transform 0.3s ease;
+		}
+
+		.project-card:hover {
+			transform: scale(1.02);
+			z-index: 10;
 		}
 
 		.project-card img {
@@ -172,6 +184,7 @@
 			height: 100%;
 			object-fit: cover;
 			transition: 0.6s;
+			border-radius: 4px;
 		}
 
 		.project-overlay {
@@ -378,44 +391,112 @@
 	</section>
 
 	<section id="projects" class="text-center">
-		<div class="container">
-			<h2 class="section-title">Projekte</h2>
-			<p class="text-muted mb-4">Überblick über meine Projekte. Mehr auf <a
+		<div class="container-fluid px-4">
+			<h2 class="section-title" data-aos="fade-up">Projekte</h2>
+			<p class="text-muted mb-4" data-aos="fade-up">Ein Auszug meiner Arbeiten. Mehr Details auf <a
 					href="https://github.com/paalwie">GitHub</a>.</p>
 
-			<div class="mb-5">
+			<div class="mb-5" data-aos="fade-up">
 				<button class="filter-btn active" onclick="filterSelection('all')">Alle</button>
-				<button class="filter-btn" onclick="filterSelection('java')">Java</button>
-				<button class="filter-btn" onclick="filterSelection('python')">Python</button>
-				<button class="filter-btn" onclick="filterSelection('csharp')">C#</button>
+				<button class="filter-btn" onclick="filterSelection('games')">Games</button>
+				<button class="filter-btn" onclick="filterSelection('apps')">Apps</button>
+				<button class="filter-btn" onclick="filterSelection('fullstack')">Fullstack</button>
+				<button class="filter-btn" onclick="filterSelection('ai-uni')">AI & Uni</button>
 			</div>
 
-			<div class="row g-0 portfolio-grid">
-				<div class="col-md-3 portfolio-item java">
+			<div class="row g-3 portfolio-grid">
+				<div class="col-md-6 col-lg-3 portfolio-item games">
 					<div class="project-card">
-						<img src="img/port_dbk.png" alt="Java DB">
+						<img src="img/port_steam.jpg" alt="Fachinformatiker Trainer">
 						<div class="project-overlay">
-							<h5>Java DB Konsole</h5>
-							<p>Datenbank-Anwendung</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 portfolio-item java">
-					<div class="project-card">
-						<img src="img/port_netzgui.png" alt="Netzplan">
-						<div class="project-overlay">
-							<h5>Netzplan GUI</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 portfolio-item csharp">
-					<div class="project-card">
-						<img src="img/port_game.png" alt="Steam Game">
-						<div class="project-overlay">
-							<h5>Fachinformatiker Trainer</h5>
-							<p>Veröffentlicht auf Steam</p>
+							<h5>FI-Trainer</h5>
+							<p>Python (Ren'Py) | Steam Release</p>
 							<a href="https://store.steampowered.com/app/3511210/Der_FachinformatikerTrainer/"
-								class="btn btn-sm btn-warning">Store</a>
+								class="btn btn-sm btn-warning" target="_blank">Steam Store</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item games">
+					<div class="project-card">
+						<img src="img/port_unity.jpg" alt="Day of the Dragon">
+						<div class="project-overlay">
+							<h5>Day of the Dragon</h5>
+							<p>Unity / C# | Uni-Projekt</p>
+							<a href="https://github.com/paalwie/UnityGame" class="btn btn-sm btn-warning"
+								target="_blank">Code</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item apps">
+					<div class="project-card">
+						<img src="img/port_theatre.jpg" alt="Staatstheater App">
+						<div class="project-overlay">
+							<h5>Theater App</h5>
+							<p>Kotlin / Android Studio</p>
+							<a href="https://github.com/paalwie/staatstheater-augsburg-app"
+								class="btn btn-sm btn-warning" target="_blank">GitHub</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item games fullstack">
+					<div class="project-card">
+						<img src="img/port_idle.jpg" alt="InformatikerIdle">
+						<div class="project-overlay">
+							<h5>InformatikerIdle</h5>
+							<p>Angular / Nest.js / PostgreSQL</p>
+							<a href="https://github.com/paalwie/InformatikerIdle" class="btn btn-sm btn-warning"
+								target="_blank">GitHub</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item fullstack">
+					<div class="project-card">
+						<img src="img/port_ap2.jpg" alt="AP2 Lernwebseite">
+						<div class="project-overlay">
+							<h5>AP2 Lernportal</h5>
+							<p>Angular / TypeScript</p>
+							<a href="https://github.com/paalwie/ap2-lernwebseite" class="btn btn-sm btn-warning"
+								target="_blank">GitHub</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item ai-uni">
+					<div class="project-card">
+						<img src="img/port_bachelor.png" alt="Bachelorarbeit">
+						<div class="project-overlay">
+							<h5>Bachelorarbeit VR</h5>
+							<p>Python / Medizinische Informatik</p>
+							<a href="https://github.com/paalwie/BachelorMedizin" class="btn btn-sm btn-warning"
+								target="_blank">Details</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item apps fullstack">
+					<div class="project-card">
+						<img src="img/port_cards.jpg" alt="KarteiKartenApp">
+						<div class="project-overlay">
+							<h5>KarteiKarten PWA</h5>
+							<p>PWA / Onsen UI / JavaScript</p>
+							<a href="https://github.com/paalwie/KarteiKartenApp" class="btn btn-sm btn-warning"
+								target="_blank">GitHub</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-3 portfolio-item ai-uni fullstack">
+					<div class="project-card">
+						<img src="img/port_ai.jpg" alt="AI Coach">
+						<div class="project-overlay">
+							<h5>AI-Coach Integration</h5>
+							<p>Node.js / Express / OpenAI API</p>
+							<a href="https://github.com/paalwie/multi-provider-ai-chat" class="btn btn-sm btn-warning"
+								target="_blank">GitHub</a>
 						</div>
 					</div>
 				</div>
